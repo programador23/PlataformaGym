@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sucursales</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</head>
+<body>
+<div>
+<a th:href="@{/agregarSucursal}" class="btn btn-primary">Agregar Sucursal</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Region</th>
+      <th scope="col">Comuna</th>
+      <th scope="col">Dirección</th>
+      <th scope="col">Horario</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="sucursal:${sucursales}">
+      <td th:text="${sucursal.nombre}"></td>
+      <td th:text="${sucursal.region}"></td>
+      <td th:text="${sucursal.comuna}"></td>
+    <td th:text="${sucursal.direccion}"></td>
+    <td th:text="${sucursal.horario}"></td>
+    
+    </tr>
+  </tbody>
+  
+</table>
+
+<div class="container mt-4">
+
+
+<div class="row">
+ <td th:each="sucursal:${sucursales}">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+  <div class="thumbnail">
+  </div>
+    <h5 class="card-title" th:text="${sucursal.nombre} "></h5>
+    Region:<p class="card-text" th:text="${sucursal.region}"></p>
+     Comuna:<p class="card-text" th:text="${sucursal.comuna}"></p>
+     Dirección:<p class="card-text" th:text="${sucursal.direccion}"></p>
+     Horario
+     <p class="card-text" th:text="${sucursal.horario}"></p>
+  </div>
+<br>
+</div>
+<br>
+</td>
+<br>
+</div>
+
+<br>
+</div>
+
+
+
+</div>
+
+</body>
+</html>
